@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北欧スタイル ポートフォリオ | Nordic Portfolio</title>
+  <meta name="description" content="シンプルで心地よい、北欧デザインにインスパイアされたポートフォリオサイト">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">
+        <span class="logo__icon">◇</span>
+        <span class="logo__text">Nordic Portfolio</span>
+      </a>
+
+      <button class="header__menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </button>
+
+      <nav class="header__nav" role="navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#works" class="nav__link">Works</a></li>
+          <li class="nav__item"><a href="#journal" class="nav__link">Journal</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="main">
+    <!-- ヒーローセクション -->
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__content">
+          <p class="hero__subtitle">心地よい暮らしをデザインする</p>
+          <h1 class="hero__title">日々の暮らしに<br>寄り添うものづくり</h1>
+          <p class="hero__description">
+            シンプルで機能的、そして温かみのある<br>
+            北欧デザインの精神を大切にしています
+          </p>
+          <a href="#works" class="hero__cta">作品を見る</a>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__image-wrapper">
+            <div class="hero__image hero__image--placeholder">
+              <span>Featured Image</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- アバウトセクション -->
+    <section id="about" class="about section">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__label">About</span>
+          <h2 class="section__title">わたしについて</h2>
+        </div>
+
+        <div class="about__content">
+          <div class="about__image">
+            <div class="about__image-placeholder">
+              <span>Profile Photo</span>
+            </div>
+          </div>
+          <div class="about__text">
+            <p class="about__intro">
+              はじめまして。北欧のライフスタイルに魅かれ、
+              そのシンプルで心地よい美学をデザインに取り入れています。
+            </p>
+            <p class="about__description">
+              毎日使うものだからこそ、見た目だけでなく使い心地にもこだわりたい。
+              そんな思いを込めて、ウェブサイトやアプリケーションを制作しています。
+              「暮らしの中でなじむかどうか」を常に意識し、
+              訪れる人が居心地の良さを感じられるデザインを目指しています。
+            </p>
+            <div class="about__skills">
+              <h3 class="about__skills-title">専門分野</h3>
+              <ul class="skills__list">
+                <li class="skills__item">UI/UX Design</li>
+                <li class="skills__item">Web Development</li>
+                <li class="skills__item">Brand Identity</li>
+                <li class="skills__item">Photography</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 作品セクション -->
+    <section id="works" class="works section section--alt">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__label">Works</span>
+          <h2 class="section__title">作品紹介</h2>
+          <p class="section__description">
+            丁寧に、心を込めて制作したプロジェクトたち
+          </p>
+        </div>
+
+        <div class="works__grid">
+          <article class="work-card">
+            <a href="#" class="work-card__link">
+              <div class="work-card__image">
+                <div class="work-card__image-placeholder">
+                  <span>Project 1</span>
+                </div>
+              </div>
+              <div class="work-card__content">
+                <span class="work-card__category">Web Design</span>
+                <h3 class="work-card__title">オンラインストア リニューアル</h3>
+                <p class="work-card__description">
+                  北欧雑貨店のECサイトをリニューアル。温かみのある購買体験を設計。
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card">
+            <a href="#" class="work-card__link">
+              <div class="work-card__image">
+                <div class="work-card__image-placeholder">
+                  <span>Project 2</span>
+                </div>
+              </div>
+              <div class="work-card__content">
+                <span class="work-card__category">Brand Identity</span>
+                <h3 class="work-card__title">カフェのブランディング</h3>
+                <p class="work-card__description">
+                  地域に根ざしたカフェのロゴとビジュアルアイデンティティを制作。
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card">
+            <a href="#" class="work-card__link">
+              <div class="work-card__image">
+                <div class="work-card__image-placeholder">
+                  <span>Project 3</span>
+                </div>
+              </div>
+              <div class="work-card__content">
+                <span class="work-card__category">UI/UX</span>
+                <h3 class="work-card__title">暮らしの記録アプリ</h3>
+                <p class="work-card__description">
+                  日々の暮らしを写真と言葉で残す、シンプルな日記アプリのデザイン。
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card">
+            <a href="#" class="work-card__link">
+              <div class="work-card__image">
+                <div class="work-card__image-placeholder">
+                  <span>Project 4</span>
+                </div>
+              </div>
+              <div class="work-card__content">
+                <span class="work-card__category">Photography</span>
+                <h3 class="work-card__title">プロダクト撮影</h3>
+                <p class="work-card__description">
+                  手仕事の器や雑貨を、暮らしの中で輝かせるプロダクト撮影。
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <div class="works__more">
+          <a href="#" class="btn btn--outline">すべての作品を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ジャーナルセクション -->
+    <section id="journal" class="journal section">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__label">Journal</span>
+          <h2 class="section__title">日々のこと</h2>
+          <p class="section__description">
+            制作のこと、暮らしのこと、日々感じたことを綴っています
+          </p>
+        </div>
+
+        <div class="journal__grid">
+          <article class="journal-card">
+            <a href="#" class="journal-card__link">
+              <div class="journal-card__image">
+                <div class="journal-card__image-placeholder">
+                  <span>Article 1</span>
+                </div>
+              </div>
+              <div class="journal-card__content">
+                <time class="journal-card__date">2026.01.20</time>
+                <h3 class="journal-card__title">冬の光とともに過ごす時間</h3>
+                <p class="journal-card__excerpt">
+                  北欧では冬の間、光を大切にする文化があります。キャンドルの灯りに包まれながら...
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="journal-card">
+            <a href="#" class="journal-card__link">
+              <div class="journal-card__image">
+                <div class="journal-card__image-placeholder">
+                  <span>Article 2</span>
+                </div>
+              </div>
+              <div class="journal-card__content">
+                <time class="journal-card__date">2026.01.15</time>
+                <h3 class="journal-card__title">お気に入りの器を迎えて</h3>
+                <p class="journal-card__excerpt">
+                  先日、ずっと憧れていた作家さんの器を手に入れました。毎朝のコーヒータイムが...
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="journal-card">
+            <a href="#" class="journal-card__link">
+              <div class="journal-card__image">
+                <div class="journal-card__image-placeholder">
+                  <span>Article 3</span>
+                </div>
+              </div>
+              <div class="journal-card__content">
+                <time class="journal-card__date">2026.01.08</time>
+                <h3 class="journal-card__title">デザインにおける「余白」の大切さ</h3>
+                <p class="journal-card__excerpt">
+                  北欧デザインの美しさは、余白の使い方にあると思います。何を置かないか...
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <div class="journal__more">
+          <a href="#" class="btn btn--outline">すべての記事を読む</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- コンタクトセクション -->
+    <section id="contact" class="contact section section--alt">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__label">Contact</span>
+          <h2 class="section__title">お問い合わせ</h2>
+          <p class="section__description">
+            お仕事のご依頼やご相談など、お気軽にお問い合わせください
+          </p>
+        </div>
+
+        <div class="contact__content">
+          <form class="contact__form" id="contact-form">
+            <div class="form__group">
+              <label for="name" class="form__label">お名前</label>
+              <input type="text" id="name" name="name" class="form__input" required>
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">メールアドレス</label>
+              <input type="email" id="email" name="email" class="form__input" required>
+            </div>
+
+            <div class="form__group">
+              <label for="subject" class="form__label">件名</label>
+              <input type="text" id="subject" name="subject" class="form__input" required>
+            </div>
+
+            <div class="form__group">
+              <label for="message" class="form__label">メッセージ</label>
+              <textarea id="message" name="message" class="form__textarea" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary">送信する</button>
+          </form>
+
+          <div class="contact__info">
+            <div class="contact__info-item">
+              <h3 class="contact__info-title">Email</h3>
+              <p class="contact__info-text">hello@example.com</p>
+            </div>
+            <div class="contact__info-item">
+              <h3 class="contact__info-title">Social</h3>
+              <div class="contact__social">
+                <a href="#" class="social__link" aria-label="Instagram">Instagram</a>
+                <a href="#" class="social__link" aria-label="Twitter">Twitter</a>
+                <a href="#" class="social__link" aria-label="Dribbble">Dribbble</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo">
+            <span class="logo__icon">◇</span>
+            <span class="logo__text">Nordic Portfolio</span>
+          </a>
+          <p class="footer__tagline">心地よい暮らしをデザインする</p>
+        </div>
+
+        <nav class="footer__nav">
+          <ul class="footer__nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#journal">Journal</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Nordic Portfolio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/scripts/main.js"></script>
+</body>
+</html>
