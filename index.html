@@ -1,344 +1,903 @@
 <!DOCTYPE html>
+
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>北欧スタイル ポートフォリオ | Nordic Portfolio</title>
-  <meta name="description" content="シンプルで心地よい、北欧デザインにインスパイアされたポートフォリオサイト">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/src/styles/main.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>北欧ライフスタイルストア | 暮らしを豊かにするメディア＆ショップ</title>
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        main: {
+
+                            bg: '#FFFFFF',
+
+                            sub: '#F8F8F8',
+
+                            text: '#333333',
+
+                            gray: '#666666',
+
+                            light: '#999999',
+
+                            border: '#E5E5E5',
+
+                        },
+
+                        accent: {
+
+                            beige: '#F5F3EF', // カテゴリ背景用のクリーム色
+
+                        }
+
+                    },
+
+                    fontFamily: {
+
+                        sans: ['"Yu Gothic"', 'YuGothic', '"Hiragino Sans"', '"ヒラギノ角ゴシック"', '"Noto Sans JP"', 'sans-serif'],
+
+                    },
+
+                    spacing: {
+
+                        'container': '20px',
+
+                    },
+
+                    letterSpacing: {
+
+                        'widest-custom': '0.05em',
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+
+    <style>
+
+        /* ベーススタイル調整 */
+
+        body {
+
+            font-family: "Yu Gothic", YuGothic, "Hiragino Sans", "ヒラギノ角ゴシック", "Noto Sans JP", sans-serif;
+
+            color: #333333;
+
+            line-height: 1.6;
+
+            letter-spacing: 0.04em;
+
+            background-color: #F8F8F8; /* 全体背景はサブカラー */
+
+        }
+
+
+
+        /* 横スクロールバー非表示（機能は維持） */
+
+        .hide-scrollbar::-webkit-scrollbar {
+
+            display: none;
+
+        }
+
+        .hide-scrollbar {
+
+            -ms-overflow-style: none;
+
+            scrollbar-width: none;
+
+        }
+
+
+
+        /* ホバーアニメーション */
+
+        .hover-scale {
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+        .hover-scale:hover {
+
+            transform: scale(1.01);
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+        }
+
+
+
+        /* 画像オーバーレイグラデーション */
+
+        .image-overlay {
+
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 50%);
+
+        }
+
+
+
+        /* ロゴの縦書き風スタイル（PCのみ） */
+
+        @media (min-width: 1024px) {
+
+            .logo-vertical {
+
+                writing-mode: vertical-rl;
+
+                text-orientation: upright;
+
+                letter-spacing: 0.2em;
+
+                font-weight: bold;
+
+                height: auto;
+
+            }
+
+        }
+
+    </style>
+
 </head>
-<body>
-  <!-- ヘッダー -->
-  <header class="header">
-    <div class="header__container">
-      <a href="/" class="header__logo">
-        <span class="logo__icon">◇</span>
-        <span class="logo__text">Nordic Portfolio</span>
-      </a>
 
-      <button class="header__menu-toggle" aria-label="メニューを開く" aria-expanded="false">
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-      </button>
+<body class="pb-24 lg:pb-0 bg-white">
 
-      <nav class="header__nav" role="navigation">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#works" class="nav__link">Works</a></li>
-          <li class="nav__item"><a href="#journal" class="nav__link">Journal</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- メインコンテンツ -->
-  <main class="main">
-    <!-- ヒーローセクション -->
-    <section class="hero">
-      <div class="hero__container">
-        <div class="hero__content">
-          <p class="hero__subtitle">心地よい暮らしをデザインする</p>
-          <h1 class="hero__title">日々の暮らしに<br>寄り添うものづくり</h1>
-          <p class="hero__description">
-            シンプルで機能的、そして温かみのある<br>
-            北欧デザインの精神を大切にしています
-          </p>
-          <a href="#works" class="hero__cta">作品を見る</a>
-        </div>
-        <div class="hero__visual">
-          <div class="hero__image-wrapper">
-            <div class="hero__image hero__image--placeholder">
-              <span>Featured Image</span>
+
+    <header class="fixed top-0 w-full z-40 bg-white border-b border-main-border shadow-sm hidden lg:block transition-all duration-300">
+
+        <div class="max-w-[1200px] mx-auto px-6 h-20 flex items-center justify-between">
+
+            <nav class="flex gap-6 text-sm text-main-gray">
+
+                <a href="#" class="hover:text-main-text hover:underline underline-offset-4">新着商品</a>
+
+                <a href="#" class="hover:text-main-text hover:underline underline-offset-4">読みもの</a>
+
+                <a href="#" class="hover:text-main-text hover:underline underline-offset-4">ランキング</a>
+
+            </nav>
+
+
+
+            <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+
+                <a href="#" class="text-2xl font-bold tracking-widest text-main-text">北欧、暮らしの道具店</a>
+
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- アバウトセクション -->
-    <section id="about" class="about section">
-      <div class="section__container">
-        <div class="section__header">
-          <span class="section__label">About</span>
-          <h2 class="section__title">わたしについて</h2>
-        </div>
 
-        <div class="about__content">
-          <div class="about__image">
-            <div class="about__image-placeholder">
-              <span>Profile Photo</span>
-            </div>
-          </div>
-          <div class="about__text">
-            <p class="about__intro">
-              はじめまして。北欧のライフスタイルに魅かれ、
-              そのシンプルで心地よい美学をデザインに取り入れています。
-            </p>
-            <p class="about__description">
-              毎日使うものだからこそ、見た目だけでなく使い心地にもこだわりたい。
-              そんな思いを込めて、ウェブサイトやアプリケーションを制作しています。
-              「暮らしの中でなじむかどうか」を常に意識し、
-              訪れる人が居心地の良さを感じられるデザインを目指しています。
-            </p>
-            <div class="about__skills">
-              <h3 class="about__skills-title">専門分野</h3>
-              <ul class="skills__list">
-                <li class="skills__item">UI/UX Design</li>
-                <li class="skills__item">Web Development</li>
-                <li class="skills__item">Brand Identity</li>
-                <li class="skills__item">Photography</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 作品セクション -->
-    <section id="works" class="works section section--alt">
-      <div class="section__container">
-        <div class="section__header">
-          <span class="section__label">Works</span>
-          <h2 class="section__title">作品紹介</h2>
-          <p class="section__description">
-            丁寧に、心を込めて制作したプロジェクトたち
-          </p>
-        </div>
+            <div class="flex items-center gap-6">
 
-        <div class="works__grid">
-          <article class="work-card">
-            <a href="#" class="work-card__link">
-              <div class="work-card__image">
-                <div class="work-card__image-placeholder">
-                  <span>Project 1</span>
+                <div class="relative">
+
+                    <input type="text" placeholder="キーワードを探す" class="pl-3 pr-8 py-1.5 border border-main-border rounded-full text-sm w-48 focus:outline-none focus:border-main-gray bg-main-sub">
+
+                    <i class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 -translate-y-1/2 text-main-light text-xs"></i>
+
                 </div>
-              </div>
-              <div class="work-card__content">
-                <span class="work-card__category">Web Design</span>
-                <h3 class="work-card__title">オンラインストア リニューアル</h3>
-                <p class="work-card__description">
-                  北欧雑貨店のECサイトをリニューアル。温かみのある購買体験を設計。
-                </p>
-              </div>
-            </a>
-          </article>
 
-          <article class="work-card">
-            <a href="#" class="work-card__link">
-              <div class="work-card__image">
-                <div class="work-card__image-placeholder">
-                  <span>Project 2</span>
+                <div class="flex gap-4 text-main-gray">
+
+                    <a href="#" class="hover:text-main-text flex flex-col items-center gap-1 text-xs">
+
+                        <i class="fa-regular fa-user text-lg"></i>
+
+                        <span>ログイン</span>
+
+                    </a>
+
+                    <a href="#" class="hover:text-main-text flex flex-col items-center gap-1 text-xs relative">
+
+                        <i class="fa-solid fa-basket-shopping text-lg"></i>
+
+                        <span>カート</span>
+
+                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-gray-600 text-white rounded-full text-[10px] flex items-center justify-center">0</span>
+
+                    </a>
+
                 </div>
-              </div>
-              <div class="work-card__content">
-                <span class="work-card__category">Brand Identity</span>
-                <h3 class="work-card__title">カフェのブランディング</h3>
-                <p class="work-card__description">
-                  地域に根ざしたカフェのロゴとビジュアルアイデンティティを制作。
-                </p>
-              </div>
-            </a>
-          </article>
 
-          <article class="work-card">
-            <a href="#" class="work-card__link">
-              <div class="work-card__image">
-                <div class="work-card__image-placeholder">
-                  <span>Project 3</span>
-                </div>
-              </div>
-              <div class="work-card__content">
-                <span class="work-card__category">UI/UX</span>
-                <h3 class="work-card__title">暮らしの記録アプリ</h3>
-                <p class="work-card__description">
-                  日々の暮らしを写真と言葉で残す、シンプルな日記アプリのデザイン。
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article class="work-card">
-            <a href="#" class="work-card__link">
-              <div class="work-card__image">
-                <div class="work-card__image-placeholder">
-                  <span>Project 4</span>
-                </div>
-              </div>
-              <div class="work-card__content">
-                <span class="work-card__category">Photography</span>
-                <h3 class="work-card__title">プロダクト撮影</h3>
-                <p class="work-card__description">
-                  手仕事の器や雑貨を、暮らしの中で輝かせるプロダクト撮影。
-                </p>
-              </div>
-            </a>
-          </article>
-        </div>
-
-        <div class="works__more">
-          <a href="#" class="btn btn--outline">すべての作品を見る</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ジャーナルセクション -->
-    <section id="journal" class="journal section">
-      <div class="section__container">
-        <div class="section__header">
-          <span class="section__label">Journal</span>
-          <h2 class="section__title">日々のこと</h2>
-          <p class="section__description">
-            制作のこと、暮らしのこと、日々感じたことを綴っています
-          </p>
-        </div>
-
-        <div class="journal__grid">
-          <article class="journal-card">
-            <a href="#" class="journal-card__link">
-              <div class="journal-card__image">
-                <div class="journal-card__image-placeholder">
-                  <span>Article 1</span>
-                </div>
-              </div>
-              <div class="journal-card__content">
-                <time class="journal-card__date">2026.01.20</time>
-                <h3 class="journal-card__title">冬の光とともに過ごす時間</h3>
-                <p class="journal-card__excerpt">
-                  北欧では冬の間、光を大切にする文化があります。キャンドルの灯りに包まれながら...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article class="journal-card">
-            <a href="#" class="journal-card__link">
-              <div class="journal-card__image">
-                <div class="journal-card__image-placeholder">
-                  <span>Article 2</span>
-                </div>
-              </div>
-              <div class="journal-card__content">
-                <time class="journal-card__date">2026.01.15</time>
-                <h3 class="journal-card__title">お気に入りの器を迎えて</h3>
-                <p class="journal-card__excerpt">
-                  先日、ずっと憧れていた作家さんの器を手に入れました。毎朝のコーヒータイムが...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article class="journal-card">
-            <a href="#" class="journal-card__link">
-              <div class="journal-card__image">
-                <div class="journal-card__image-placeholder">
-                  <span>Article 3</span>
-                </div>
-              </div>
-              <div class="journal-card__content">
-                <time class="journal-card__date">2026.01.08</time>
-                <h3 class="journal-card__title">デザインにおける「余白」の大切さ</h3>
-                <p class="journal-card__excerpt">
-                  北欧デザインの美しさは、余白の使い方にあると思います。何を置かないか...
-                </p>
-              </div>
-            </a>
-          </article>
-        </div>
-
-        <div class="journal__more">
-          <a href="#" class="btn btn--outline">すべての記事を読む</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- コンタクトセクション -->
-    <section id="contact" class="contact section section--alt">
-      <div class="section__container">
-        <div class="section__header">
-          <span class="section__label">Contact</span>
-          <h2 class="section__title">お問い合わせ</h2>
-          <p class="section__description">
-            お仕事のご依頼やご相談など、お気軽にお問い合わせください
-          </p>
-        </div>
-
-        <div class="contact__content">
-          <form class="contact__form" id="contact-form">
-            <div class="form__group">
-              <label for="name" class="form__label">お名前</label>
-              <input type="text" id="name" name="name" class="form__input" required>
             </div>
 
-            <div class="form__group">
-              <label for="email" class="form__label">メールアドレス</label>
-              <input type="email" id="email" name="email" class="form__input" required>
-            </div>
-
-            <div class="form__group">
-              <label for="subject" class="form__label">件名</label>
-              <input type="text" id="subject" name="subject" class="form__input" required>
-            </div>
-
-            <div class="form__group">
-              <label for="message" class="form__label">メッセージ</label>
-              <textarea id="message" name="message" class="form__textarea" rows="6" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn--primary">送信する</button>
-          </form>
-
-          <div class="contact__info">
-            <div class="contact__info-item">
-              <h3 class="contact__info-title">Email</h3>
-              <p class="contact__info-text">hello@example.com</p>
-            </div>
-            <div class="contact__info-item">
-              <h3 class="contact__info-title">Social</h3>
-              <div class="contact__social">
-                <a href="#" class="social__link" aria-label="Instagram">Instagram</a>
-                <a href="#" class="social__link" aria-label="Twitter">Twitter</a>
-                <a href="#" class="social__link" aria-label="Dribbble">Dribbble</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- フッター -->
-  <footer class="footer">
-    <div class="footer__container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="/" class="footer__logo">
-            <span class="logo__icon">◇</span>
-            <span class="logo__text">Nordic Portfolio</span>
-          </a>
-          <p class="footer__tagline">心地よい暮らしをデザインする</p>
         </div>
 
-        <nav class="footer__nav">
-          <ul class="footer__nav-list">
-            <li><a href="#about">About</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#journal">Journal</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+    </header>
 
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 Nordic Portfolio. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
 
-  <script type="module" src="/src/scripts/main.js"></script>
+
+    <header class="fixed top-0 w-full z-40 bg-white border-b border-main-border lg:hidden">
+
+        <div class="px-4 h-14 flex items-center justify-between">
+
+            <a href="#" class="text-lg font-bold tracking-widest text-main-text">北欧、暮らしの道具店</a>
+
+            <i class="fa-solid fa-magnifying-glass text-main-gray text-lg"></i>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="pt-16 lg:pt-24 max-w-[1200px] mx-auto w-full">
+
+
+
+        <section class="px-4 lg:px-6 mb-12 lg:mb-20">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+
+
+
+                <article class="relative w-full aspect-[4/3] lg:aspect-[16/10] group cursor-pointer overflow-hidden rounded-xl">
+
+                    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=1600&auto=format&fit=crop" alt="Main Feature" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                    <div class="absolute inset-0 image-overlay"></div>
+
+                    <div class="absolute bottom-0 left-0 p-6 lg:p-8 w-full text-white">
+
+                        <div class="flex items-center gap-2 mb-3">
+
+                            <span class="bg-white/90 text-main-text text-xs px-2 py-1 rounded flex items-center gap-1">
+
+                                <i class="fa-solid fa-book-open"></i> 読みもの
+
+                            </span>
+
+                            <span class="bg-black/30 backdrop-blur-sm text-white text-xs px-2 py-1 rounded">NEW</span>
+
+                        </div>
+
+                        <h2 class="text-xl lg:text-3xl font-bold leading-snug mb-2 drop-shadow-md">
+
+                            朝の時間を整える。<br>私が「やめたこと」と「はじめたこと」。
+
+                        </h2>
+
+                        <p class="text-sm lg:text-base opacity-90 hidden lg:block">
+
+                            忙しい毎日の中で、少しだけ立ち止まって考えてみた、朝のルーティンの見直し。
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <div class="hidden lg:flex flex-col gap-4 lg:gap-8">
+
+                    <article class="relative flex-1 rounded-xl overflow-hidden group cursor-pointer">
+
+                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop" alt="Sub Feature 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                        <div class="absolute inset-0 image-overlay"></div>
+
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+
+                            <span class="bg-white/90 text-main-text text-xs px-2 py-1 rounded mb-2 inline-flex items-center gap-1">
+
+                                <i class="fa-solid fa-bag-shopping"></i> 商品ページ
+
+                            </span>
+
+                            <h3 class="text-lg font-bold mt-2">長く愛せる、シンプルで丈夫な<br>リネンのエプロン。</h3>
+
+                        </div>
+
+                    </article>
+
+                    <article class="relative flex-1 rounded-xl overflow-hidden group cursor-pointer">
+
+                        <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?q=80&w=800&auto=format&fit=crop" alt="Sub Feature 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                        <div class="absolute inset-0 image-overlay"></div>
+
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+
+                            <span class="bg-white/90 text-main-text text-xs px-2 py-1 rounded mb-2 inline-flex items-center gap-1">
+
+                                <i class="fa-solid fa-video"></i> ビデオ
+
+                            </span>
+
+                            <h3 class="text-lg font-bold mt-2">【ルームツアー】北欧ヴィンテージと<br>植物に囲まれた2人暮らし</h3>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="mb-16 lg:mb-24 px-4 overflow-hidden">
+
+            <div class="flex overflow-x-auto gap-6 lg:gap-10 pb-4 hide-scrollbar justify-start lg:justify-center px-2">
+
+                <a href="#" class="group flex flex-col items-center min-w-[70px] cursor-pointer">
+
+                    <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-accent-beige flex items-center justify-center mb-3 transition-colors group-hover:bg-[#EBE5DC]">
+
+                        <img src="https://api.iconify.design/ph:t-shirt-thin.svg?color=%23666666" class="w-8 h-8 opacity-70" alt="Fashion">
+
+                    </div>
+
+                    <span class="text-xs text-main-gray group-hover:text-main-text">ファッション</span>
+
+                </a>
+
+                <a href="#" class="group flex flex-col items-center min-w-[70px] cursor-pointer">
+
+                    <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-accent-beige flex items-center justify-center mb-3 transition-colors group-hover:bg-[#EBE5DC]">
+
+                        <img src="https://api.iconify.design/ph:bag-thin.svg?color=%23666666" class="w-8 h-8 opacity-70" alt="Bag">
+
+                    </div>
+
+                    <span class="text-xs text-main-gray group-hover:text-main-text">バッグ</span>
+
+                </a>
+
+                <a href="#" class="group flex flex-col items-center min-w-[70px] cursor-pointer">
+
+                    <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-accent-beige flex items-center justify-center mb-3 transition-colors group-hover:bg-[#EBE5DC]">
+
+                        <img src="https://api.iconify.design/ph:chair-thin.svg?color=%23666666" class="w-8 h-8 opacity-70" alt="Interior">
+
+                    </div>
+
+                    <span class="text-xs text-main-gray group-hover:text-main-text">インテリア</span>
+
+                </a>
+
+                <a href="#" class="group flex flex-col items-center min-w-[70px] cursor-pointer">
+
+                    <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-accent-beige flex items-center justify-center mb-3 transition-colors group-hover:bg-[#EBE5DC]">
+
+                        <img src="https://api.iconify.design/ph:cooking-pot-thin.svg?color=%23666666" class="w-8 h-8 opacity-70" alt="Kitchen">
+
+                    </div>
+
+                    <span class="text-xs text-main-gray group-hover:text-main-text">キッチン</span>
+
+                </a>
+
+                <a href="#" class="group flex flex-col items-center min-w-[70px] cursor-pointer">
+
+                    <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-accent-beige flex items-center justify-center mb-3 transition-colors group-hover:bg-[#EBE5DC]">
+
+                        <img src="https://api.iconify.design/ph:coffee-thin.svg?color=%23666666" class="w-8 h-8 opacity-70" alt="Tableware">
+
+                    </div>
+
+                    <span class="text-xs text-main-gray group-hover:text-main-text">食器</span>
+
+                </a>
+
+                <a href="#" class="group flex flex-col items-center min-w-[70px] cursor-pointer">
+
+                    <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-accent-beige flex items-center justify-center mb-3 transition-colors group-hover:bg-[#EBE5DC]">
+
+                        <img src="https://api.iconify.design/ph:plant-thin.svg?color=%23666666" class="w-8 h-8 opacity-70" alt="Daily">
+
+                    </div>
+
+                    <span class="text-xs text-main-gray group-hover:text-main-text">日用品</span>
+
+                </a>
+
+                 <a href="#" class="group flex flex-col items-center min-w-[70px] cursor-pointer">
+
+                    <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-accent-beige flex items-center justify-center mb-3 transition-colors group-hover:bg-[#EBE5DC]">
+
+                        <img src="https://api.iconify.design/ph:dots-three-circle-thin.svg?color=%23666666" class="w-8 h-8 opacity-70" alt="Other">
+
+                    </div>
+
+                    <span class="text-xs text-main-gray group-hover:text-main-text">その他</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="px-4 lg:px-6 mb-16 lg:mb-24">
+
+            <div class="flex justify-between items-end mb-8 border-b border-main-border pb-4">
+
+                <h2 class="text-xl lg:text-2xl font-bold text-main-text">新着の読みもの</h2>
+
+                <a href="#" class="text-xs lg:text-sm text-main-gray hover:text-main-text transition-colors">すべて見る &rarr;</a>
+
+            </div>
+
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+
+                <article class="group cursor-pointer">
+
+                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-[3/2]">
+
+                        <img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Article">
+
+                        <span class="absolute top-3 left-3 bg-white/90 text-xs px-2 py-1 rounded text-main-text">スタッフコラム</span>
+
+                    </div>
+
+                    <h3 class="text-base lg:text-lg font-bold leading-relaxed mb-2 group-hover:text-gray-600 transition-colors">
+
+                        「とりあえず」で買わない。私がものを迎えるときに大切にしている3つのルール。
+
+                    </h3>
+
+                    <p class="text-xs lg:text-sm text-main-gray line-clamp-2 leading-relaxed">
+
+                        ものが溢れる時代だからこそ、自分の価値観にフィットするものだけを選びたい。そんなスタッフの実践録です。
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="group cursor-pointer">
+
+                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-[3/2]">
+
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Article">
+
+                        <span class="absolute top-3 left-3 bg-white/90 text-xs px-2 py-1 rounded text-main-text">特集</span>
+
+                    </div>
+
+                    <h3 class="text-base lg:text-lg font-bold leading-relaxed mb-2 group-hover:text-gray-600 transition-colors">
+
+                        週末に作りたい、春野菜たっぷりの常備菜レシピ。
+
+                    </h3>
+
+                    <p class="text-xs lg:text-sm text-main-gray line-clamp-2 leading-relaxed">
+
+                        新玉ねぎ、アスパラ、春キャベツ。旬の美味しさを閉じ込める簡単なレシピをご紹介します。
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="group cursor-pointer">
+
+                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-[3/2]">
+
+                        <img src="https://images.unsplash.com/photo-1595867280386-8208bf50907e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Article">
+
+                        <span class="absolute top-3 left-3 bg-white/90 text-xs px-2 py-1 rounded text-main-text">お知らせ</span>
+
+                    </div>
+
+                    <h3 class="text-base lg:text-lg font-bold leading-relaxed mb-2 group-hover:text-gray-600 transition-colors">
+
+                        【再入荷】完売していた「北欧のフラワーベース」が届きました。
+
+                    </h3>
+
+                    <p class="text-xs lg:text-sm text-main-gray line-clamp-2 leading-relaxed">
+
+                        お待たせいたしました。窓辺に置くだけで絵になる、人気の一輪挿しが久しぶりの入荷です。
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="px-4 lg:px-6 mb-16 lg:mb-24 bg-accent-beige/30 py-12 -mx-4 lg:-mx-6 lg:px-12 rounded-none lg:rounded-lg">
+
+            <div class="flex justify-between items-end mb-8">
+
+                <h2 class="text-xl lg:text-2xl font-bold text-main-text">今、売れているアイテム</h2>
+
+                <a href="#" class="text-xs lg:text-sm text-main-gray hover:text-main-text transition-colors">ランキングを見る &rarr;</a>
+
+            </div>
+
+
+
+            <div class="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto hide-scrollbar pb-4 lg:pb-0 snap-x">
+
+
+
+                <a href="#" class="group min-w-[240px] lg:min-w-0 snap-start bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition-all">
+
+                    <div class="relative aspect-square overflow-hidden rounded-lg mb-3 bg-gray-100">
+
+                        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover mix-blend-multiply" alt="Product">
+
+                        <span class="absolute bottom-2 left-2 bg-red-800/80 text-white text-[10px] px-2 py-0.5 rounded">残りわずか</span>
+
+                    </div>
+
+                    <div class="px-1">
+
+                        <h4 class="text-sm text-main-text leading-relaxed h-[3em] overflow-hidden line-clamp-2 mb-2 group-hover:underline decoration-main-border">
+
+                            【別注】シンプルで使いやすい、職人が作る帆布のトートバッグ
+
+                        </h4>
+
+                        <p class="font-bold text-main-text">¥8,800 <span class="text-xs font-normal text-main-gray">（税込）</span></p>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="#" class="group min-w-[240px] lg:min-w-0 snap-start bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition-all">
+
+                    <div class="relative aspect-square overflow-hidden rounded-lg mb-3 bg-gray-100">
+
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover mix-blend-multiply" alt="Product">
+
+                    </div>
+
+                    <div class="px-1">
+
+                        <h4 class="text-sm text-main-text leading-relaxed h-[3em] overflow-hidden line-clamp-2 mb-2 group-hover:underline decoration-main-border">
+
+                            手になじむ木のハンドル。コーヒー時間を楽しむドリップポット
+
+                        </h4>
+
+                        <p class="font-bold text-main-text">¥4,950 <span class="text-xs font-normal text-main-gray">（税込）</span></p>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="#" class="group min-w-[240px] lg:min-w-0 snap-start bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition-all">
+
+                    <div class="relative aspect-square overflow-hidden rounded-lg mb-3 bg-gray-100">
+
+                        <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover mix-blend-multiply" alt="Product">
+
+                    </div>
+
+                    <div class="px-1">
+
+                        <h4 class="text-sm text-main-text leading-relaxed h-[3em] overflow-hidden line-clamp-2 mb-2 group-hover:underline decoration-main-border">
+
+                            洗顔後が楽しみになる。オーガニックコットンのふわふわタオル
+
+                        </h4>
+
+                        <div class="flex items-center gap-2">
+
+                            <p class="text-xs text-main-light line-through">¥2,200</p>
+
+                            <p class="font-bold text-main-text">¥1,980 <span class="text-xs font-normal text-main-gray">（税込）</span></p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="#" class="group min-w-[240px] lg:min-w-0 snap-start bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition-all">
+
+                    <div class="relative aspect-square overflow-hidden rounded-lg mb-3 bg-gray-100">
+
+                        <img src="https://images.unsplash.com/photo-1594040226829-7f251ab46d80?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover mix-blend-multiply" alt="Product">
+
+                    </div>
+
+                    <div class="px-1">
+
+                        <h4 class="text-sm text-main-text leading-relaxed h-[3em] overflow-hidden line-clamp-2 mb-2 group-hover:underline decoration-main-border">
+
+                            置くだけで様になる、ラタンの収納バスケット（Mサイズ）
+
+                        </h4>
+
+                        <p class="font-bold text-main-text">¥3,850 <span class="text-xs font-normal text-main-gray">（税込）</span></p>
+
+                    </div>
+
+                </a>
+
+
+
+            </div>
+
+        </section>
+
+
+
+        <section class="px-4 lg:px-6 mb-16 lg:mb-24">
+
+            <h2 class="text-xl lg:text-2xl font-bold text-main-text mb-8 text-center">暮らしのヒントを探す</h2>
+
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="relative rounded-lg overflow-hidden aspect-square group cursor-pointer md:col-span-2 lg:col-span-1">
+
+                    <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Living">
+
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+
+                    <div class="absolute bottom-6 left-6 text-white pr-6">
+
+                        <p class="text-sm font-bold mb-1 opacity-90">INTERIOR</p>
+
+                        <h3 class="text-xl font-bold">心地よいリビングの作り方</h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="relative rounded-lg overflow-hidden aspect-[4/5] md:aspect-auto group cursor-pointer">
+
+                    <img src="https://images.unsplash.com/photo-1512418490979-92798cec1380?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Books">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+                    <div class="absolute bottom-6 left-6 text-white pr-6">
+
+                        <p class="text-sm font-bold mb-1 opacity-90">BOOKS</p>
+
+                        <h3 class="text-lg font-bold">週末に読みたいエッセイ</h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="relative rounded-lg overflow-hidden aspect-[4/5] md:aspect-auto group cursor-pointer">
+
+                    <img src="https://images.unsplash.com/photo-1598514983318-2f64f8f4796c?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Clean">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+                    <div class="absolute bottom-6 left-6 text-white pr-6">
+
+                        <p class="text-sm font-bold mb-1 opacity-90">CLEANING</p>
+
+                        <h3 class="text-lg font-bold">自然素材で始める掃除習慣</h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <footer class="bg-white border-t border-main-border pt-12 pb-24 lg:pb-12 text-main-gray">
+
+        <div class="max-w-[1200px] mx-auto px-6">
+
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
+
+                <div class="lg:col-span-2">
+
+                    <h3 class="font-bold text-main-text text-lg mb-4 tracking-widest">北欧、暮らしの道具店</h3>
+
+                    <p class="text-sm mb-6 leading-loose">
+
+                        「フィットする暮らし、つくろう」をテーマに、<br>
+
+                        北欧や国内外の雑貨・道具、日々の暮らしにまつわる<br>
+
+                        コンテンツをお届けしています。
+
+                    </p>
+
+                    <div class="flex gap-4 mb-6">
+
+                        <a href="#" class="w-10 h-10 rounded-full bg-main-sub flex items-center justify-center hover:bg-main-border transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+
+                        <a href="#" class="w-10 h-10 rounded-full bg-main-sub flex items-center justify-center hover:bg-main-border transition-colors"><i class="fa-brands fa-youtube text-lg"></i></a>
+
+                        <a href="#" class="w-10 h-10 rounded-full bg-main-sub flex items-center justify-center hover:bg-main-border transition-colors"><i class="fa-brands fa-line text-lg"></i></a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4 class="font-bold text-main-text text-sm mb-4">ショッピングガイド</h4>
+
+                    <ul class="space-y-3 text-sm">
+
+                        <li><a href="#" class="hover:underline">配送料について（全国一律580円）</a></li>
+
+                        <li><a href="#" class="hover:underline">お支払い方法</a></li>
+
+                        <li><a href="#" class="hover:underline">返品・交換について</a></li>
+
+                        <li><a href="#" class="hover:underline">よくあるご質問</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h4 class="font-bold text-main-text text-sm mb-4">運営について</h4>
+
+                    <ul class="space-y-3 text-sm">
+
+                        <li><a href="#" class="hover:underline">私たちについて</a></li>
+
+                        <li><a href="#" class="hover:underline">採用情報</a></li>
+
+                        <li><a href="#" class="hover:underline">利用規約</a></li>
+
+                        <li><a href="#" class="hover:underline">プライバシーポリシー</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="border-t border-main-border pt-8 text-center text-xs text-main-light">
+
+                <p>&copy; 2024 北欧、暮らしの道具店 Inspired Demo. All Rights Reserved.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <nav class="fixed bottom-0 w-full bg-white border-t border-main-border z-50 lg:hidden shadow-[0_-2px_10px_rgba(0,0,0,0.03)] pb-safe">
+
+        <div class="grid grid-cols-5 h-16">
+
+            <a href="#" class="flex flex-col items-center justify-center text-main-gray active:text-main-text hover:bg-gray-50">
+
+                <i class="fa-solid fa-house text-lg mb-1"></i>
+
+                <span class="text-[10px]">ホーム</span>
+
+            </a>
+
+            <a href="#" class="flex flex-col items-center justify-center text-main-gray active:text-main-text hover:bg-gray-50 relative">
+
+                <i class="fa-regular fa-star text-lg mb-1"></i>
+
+                <span class="text-[10px]">新着</span>
+
+                <span class="absolute top-2 right-2 w-1.5 h-1.5 bg-red-400 rounded-full"></span>
+
+            </a>
+
+            <a href="#" class="flex flex-col items-center justify-center text-main-gray active:text-main-text hover:bg-gray-50">
+
+                <i class="fa-solid fa-book-open text-lg mb-1"></i>
+
+                <span class="text-[10px]">読みもの</span>
+
+            </a>
+
+            <a href="#" class="flex flex-col items-center justify-center text-main-gray active:text-main-text hover:bg-gray-50 relative">
+
+                <i class="fa-solid fa-basket-shopping text-lg mb-1"></i>
+
+                <span class="text-[10px]">カート</span>
+
+            </a>
+
+            <a href="#" class="flex flex-col items-center justify-center text-main-gray active:text-main-text hover:bg-gray-50">
+
+                <i class="fa-solid fa-bars text-lg mb-1"></i>
+
+                <span class="text-[10px]">メニュー</span>
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <style>
+
+        /* iPhone X等のセーフエリア対応 */
+
+        .pb-safe {
+
+            padding-bottom: env(safe-area-inset-bottom);
+
+        }
+
+    </style>
+
 </body>
+
 </html>
