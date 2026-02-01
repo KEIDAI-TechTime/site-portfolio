@@ -1,11 +1,10 @@
 import { StrictMode } from 'react'
-import './i18n'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
+import SalonLP from './page.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <SalonLP />
   </StrictMode>,
 )
