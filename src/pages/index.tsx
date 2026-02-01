@@ -25,9 +25,9 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'icecream',
-    title: 'Harlow Ice Cream',
+    title: 'Soleil Ice Cream',
     category: 'アイスクリームショップ',
-    description: '神戸発のクラフトアイスクリーム店。温かみのあるナチュラルなデザイン。',
+    description: '鎌倉発のクラフトアイスクリーム店。温かみのあるナチュラルなデザイン。',
     icon: <IceCream2 className="w-8 h-8" />,
     path: '/icecream',
     color: 'from-[#2C5F5F] to-[#1E4545]',
