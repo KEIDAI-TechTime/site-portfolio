@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Scissors, Coffee, Building2, Dumbbell, Stethoscope, Scale, ExternalLink } from 'lucide-react';
+import { Scissors, IceCream2, Building2, Dumbbell, Stethoscope, Scale, ExternalLink } from 'lucide-react';
 
 interface PortfolioItem {
   id: string;
@@ -24,14 +24,14 @@ const portfolioItems: PortfolioItem[] = [
     status: 'live',
   },
   {
-    id: 'cafe',
-    title: 'Coming Soon',
-    category: 'カフェ・レストラン',
-    description: '温かみのあるカフェのLP。ナチュラルでオーガニックな雰囲気。',
-    icon: <Coffee className="w-8 h-8" />,
-    path: '/cafe',
-    color: 'from-[#6B8E23] to-[#556B2F]',
-    status: 'coming',
+    id: 'icecream',
+    title: 'Harlow Ice Cream',
+    category: 'アイスクリームショップ',
+    description: '神戸発のクラフトアイスクリーム店。温かみのあるナチュラルなデザイン。',
+    icon: <IceCream2 className="w-8 h-8" />,
+    path: '/icecream',
+    color: 'from-[#2C5F5F] to-[#1E4545]',
+    status: 'live',
   },
   {
     id: 'realestate',
