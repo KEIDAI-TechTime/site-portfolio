@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PortfolioIndex from './pages/index';
-import SalonLP from './pages/salon';
+import SalonLP from './pages/salon/page';
 
 function App() {
   return (
