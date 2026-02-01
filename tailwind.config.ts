@@ -3,9 +3,15 @@ export default {
     content: [
       "./index.html",
       "./src/**/*.{js,ts,jsx,tsx}",
+      "./*.{js,ts,jsx,tsx}",
     ],
     theme: {
-      extend: {},
+      extend: {
+        fontFamily: {
+          sans: ['Noto Sans JP', 'sans-serif'],
+          serif: ['Cormorant Garamond', 'serif'],
+        },
+      },
     },
     plugins: [],
   }
