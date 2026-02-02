@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Scissors, Coffee, Building2, Dumbbell, Stethoscope, Scale, ExternalLink } from 'lucide-react';
+import { Scissors, Coffee, Building2, Dumbbell, Stethoscope, Scale, ExternalLink, IceCream } from 'lucide-react';
 
 interface PortfolioItem {
   id: string;
@@ -21,6 +21,16 @@ const portfolioItems: PortfolioItem[] = [
     icon: <Scissors className="w-8 h-8" />,
     path: '/salon',
     color: 'from-[#8B7355] to-[#6B5344]',
+    status: 'live',
+  },
+  {
+    id: 'ice-cream',
+    title: 'LUNA GELATO',
+    category: 'ジェラート・スイーツ',
+    description: '手作りジェラート店のLP。和の雰囲気と職人の心を表現した上品なデザイン。',
+    icon: <IceCream className="w-8 h-8" />,
+    path: '/ice-cream',
+    color: 'from-[#7BA3A8] to-[#5C8A8F]',
     status: 'live',
   },
   {
